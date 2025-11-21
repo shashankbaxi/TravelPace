@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TravelPace</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">TravelPace</a>
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#review">Review</a></li>
+          <li><a href="#book">Book</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <!-- Hero/Home Section -->
+    <section class="home" id="home">
+      <div class="slideshow-container">
+        <div class="slide"><img src="images/T-1.jpg" alt="Hero 1" /></div>
+        <div class="slide"><img src="images/T-2.jpg" alt="Hero 2" /></div>
+        <div class="slide"><img src="images/T-3.jpg" alt="Hero 3" /></div>
+        <div class="slide"><img src="images/T-4.jpg" alt="Hero 4" /></div>
+        <div class="overlay-content">
+          <span>explore, discover, travel</span>
+          <h1>Travel the World with TravelPace</h1>
+          <div class="btn-holder">
+            <a href="#book" class="btn">Book Now</a>
+          </div>
+          <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+        </div>
+      </div>
+      <button id="scrollUp"><i class="fas fa-chevron-up"></i></button>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages colored-bg1" id="packages">
+      <h1 class="heading-title">Our Packages</h1>
+      <div class="card-row">
+        <div class="card">
+          <img src="images/P-1.jpg" alt="Adventure" />
+          <h3>Adventure & Tour</h3>
+          <p>Explore the secrets of nature & enjoy thrilling experiences.</p>
+          <div class="price">₹23,999</div>
+          <a href="#book" class="btn">Book Now</a>
+        </div>
+        <div class="card">
+          <img src="images/P-2.jpg" alt="Mountain" />
+          <h3>Mountain Trips</h3>
+          <p>Climb breathtaking peaks and enjoy stunning views.</p>
+          <div class="price">₹19,500</div>
+          <a href="#book" class="btn">Book Now</a>
+        </div>
+        <div class="card">
+          <img src="images/P-3.jpg" alt="Beach" />
+          <h3>Beach Relaxation</h3>
+          <p>Unwind on sun-kissed beaches and blue waters.</p>
+          <div class="price">₹31,200</div>
+          <a href="#book" class="btn">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services colored-bg2" id="services">
+      <h1 class="heading-title">Our Services</h1>
+      <div class="card-row">
+        <div class="service-card">
+          <i class="fas fa-plane"></i>
+          <h3>Flight Booking</h3>
+          <p>Top deals on flights for every trip.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-hotel"></i>
+          <h3>Hotel Reservation</h3>
+          <p>Book stays with leading hotels worldwide.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-car"></i>
+          <h3>Car Rentals</h3>
+          <p>Best cars for road trips and travels.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery colored-bg3" id="gallery">
+      <h1 class="heading-title">Gallery</h1>
+      <div class="gallery-grid">
+        <img src="images/G-1.jpg" alt="Gallery 1" class="gallery-img" />
+        <img src="images/G-2.jpg" alt="Gallery 2" class="gallery-img" />
+        <img src="images/G-3.jpg" alt="Gallery 3" class="gallery-img" />
+        <img src="images/G-4.jpg" alt="Gallery 4" class="gallery-img" />
+        <img src="images/G-5.jpg" alt="Gallery 5" class="gallery-img" />
+        <img src="images/G-6.jpg" alt="Gallery 6" class="gallery-img" />
+      </div>
+    </section>
+
+    <!-- Review Section -->
+    <section class="review colored-bg4" id="review">
+      <h1 class="heading-title">Client Reviews</h1>
+      <div class="review-list">
+        <div class="review-card">
+          <p>"Great service and amazing travel experiences!"</p>
+          <h3>- John Doe</h3>
+        </div>
+        <div class="review-card">
+          <p>"Highly recommend TravelPace for your next adventure."</p>
+          <h3>- Jane Smith</h3>
+        </div>
+        <div class="review-card">
+          <p>"Professional and friendly staff made it perfect."</p>
+          <h3>- Mike Johnson</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section (after reviews)-->
+    <section class="book colored-bg5" id="book">
+      <h1 class="heading-title">Book Your Trip!</h1>
+      <form action="#" class="book-form">
+        <div class="flex">
+          <div class="inputBox">
+            <span>Name :</span>
+            <input type="text" placeholder="Enter your name" />
+          </div>
+          <div class="inputBox">
+            <span>Email :</span>
+            <input type="email" placeholder="Enter your email" />
+          </div>
+          <div class="inputBox">
+            <span>Phone :</span>
+            <input type="number" placeholder="Enter your number" />
+          </div>
+          <div class="inputBox">
+            <span>Address :</span>
+            <input type="text" placeholder="Enter your address" />
+          </div>
+          <div class="inputBox">
+            <span>Where to :</span>
+            <input type="text" placeholder="Place you want to visit" />
+          </div>
+          <div class="inputBox">
+            <span>How many :</span>
+            <input type="number" placeholder="Number of guests" />
+          </div>
+          <div class="inputBox">
+            <span>Arrivals :</span>
+            <input type="date" />
+          </div>
+          <div class="inputBox">
+            <span>Leaving :</span>
+            <input type="date" />
+          </div>
+        </div>
+        <input type="submit" value="Book Now" class="btn" />
+      </form>
+    </section>
+
+    <!-- Contact Section (last)-->
+    <section class="contact colored-bg6" id="contact">
+      <h1 class="heading-title">Contact Us</h1>
+      <form action="#" class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
+    </section>
+
+    <footer>&copy; 2025 TravelPace. All rights reserved.</footer>
+    <script src="index.js"></script>
+  </body>
+</html>
