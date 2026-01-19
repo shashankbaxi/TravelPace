@@ -2,7 +2,7 @@ TravelPace 🌍✨
 TravelPace is a modern and responsive travel portfolio website designed to inspire adventure and make booking trips easy. Built with HTML, CSS, and JavaScript, it features a hero image slideshow, animated sections, vibrant galleries, user reviews, and interactive booking forms—all styled with elegant color backgrounds.
 
 🚀 Live Demo
-https://travel-pace.vercel.app/#home
+(https://travel-pace.vercel.app/)
 
 🖥️ Features
 📸 Hero slideshow with smooth transitions
