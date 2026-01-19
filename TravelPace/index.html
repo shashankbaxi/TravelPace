@@ -1,192 +1,376 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TravelPace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelPace | Explore at Your Own Pace</title>
+
     <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
+
   <body>
-    <header>
-      <a href="#" class="logo">TravelPace</a>
-      <nav class="navbar" id="navbar">
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#review">Review</a></li>
-          <li><a href="#book">Book</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div id="menu-btn" class="fas fa-bars"></div>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="nav">
+        <div class="logo">TravelPace</div>
+
+        <nav id="navbar">
+          <button class="menu-close" id="menuClose" aria-label="Close menu">
+            ✕
+          </button>
+          <a href="#home">Home</a>
+          <a href="#destinations">Destinations</a>
+          <a href="#Packages">Packages</a>
+          <a href="#why">Why Us</a>
+          <a href="#trips">Trips</a>
+          <a href="#book">Book </a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            🌙
+          </button>
+          <a href="#contact" class="btn-nav">Plan Trip</a>
+          <!-- CHANGED: div → button with id -->
+          <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">
+            ☰
+          </button>
+        </div>
+      </div>
     </header>
 
-    <!-- Hero/Home Section -->
-    <section class="home" id="home">
-      <div class="slideshow-container">
-        <div class="slide"><img src="images/T-1.jpg" alt="Hero 1" /></div>
-        <div class="slide"><img src="images/T-2.jpg" alt="Hero 2" /></div>
-        <div class="slide"><img src="images/T-3.jpg" alt="Hero 3" /></div>
-        <div class="slide"><img src="images/T-4.jpg" alt="Hero 4" /></div>
-        <div class="overlay-content">
-          <span>explore, discover, travel</span>
-          <h1>Travel the World with TravelPace</h1>
-          <div class="btn-holder">
-            <a href="#book" class="btn">Book Now</a>
-          </div>
-          <div class="dots">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-          </div>
-        </div>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-slides">
+        <div
+          class="slide active"
+          style="background-image: url(&quot;images/G-2.jpg&quot;)"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url(&quot;images/mountain.jpg&quot;)"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url(&quot;images/city.jpg&quot;)"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url(&quot;images/T-3.jpg&quot;)"
+        ></div>
       </div>
-      <button id="scrollUp"><i class="fas fa-chevron-up"></i></button>
-    </section>
 
-    <!-- Packages Section -->
-    <section class="packages colored-bg1" id="packages">
-      <h1 class="heading-title">Our Packages</h1>
-      <div class="card-row">
-        <div class="card">
-          <img src="images/P-1.jpg" alt="Adventure" />
-          <h3>Adventure & Tour</h3>
-          <p>Explore the secrets of nature & enjoy thrilling experiences.</p>
-          <div class="price">₹23,999</div>
-          <a href="#book" class="btn">Book Now</a>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h2>Travel the world<br />at your own pace</h2>
+        <p>Discover incredible destinations and unforgettable experiences</p>
+
+        <div class="slide-nav">
+          <div class="slide-dots"></div>
         </div>
-        <div class="card">
-          <img src="images/P-2.jpg" alt="Mountain" />
-          <h3>Mountain Trips</h3>
-          <p>Climb breathtaking peaks and enjoy stunning views.</p>
-          <div class="price">₹19,500</div>
-          <a href="#book" class="btn">Book Now</a>
-        </div>
-        <div class="card">
-          <img src="images/P-3.jpg" alt="Beach" />
-          <h3>Beach Relaxation</h3>
-          <p>Unwind on sun-kissed beaches and blue waters.</p>
-          <div class="price">₹31,200</div>
-          <a href="#book" class="btn">Book Now</a>
-        </div>
+
+        <a href="#destinations" class="btn-primary">Explore Destinations</a>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services colored-bg2" id="services">
-      <h1 class="heading-title">Our Services</h1>
-      <div class="card-row">
-        <div class="service-card">
-          <i class="fas fa-plane"></i>
-          <h3>Flight Booking</h3>
-          <p>Top deals on flights for every trip.</p>
+    <!-- DESTINATIONS -->
+    <section id="destinations" class="destination-section">
+      <h3 class="section-title">Explore Destinations</h3>
+
+      <div class="grid destinations">
+        <div class="destination-card">
+          <img src="images/paris.avif" alt="Paris" />
+          <span>Paris, France</span>
         </div>
-        <div class="service-card">
-          <i class="fas fa-hotel"></i>
-          <h3>Hotel Reservation</h3>
-          <p>Book stays with leading hotels worldwide.</p>
+        <div class="destination-card">
+          <img src="images/bali.avif" alt="Bali" />
+          <span>Bali, Indonesia</span>
         </div>
-        <div class="service-card">
-          <i class="fas fa-car"></i>
-          <h3>Car Rentals</h3>
-          <p>Best cars for road trips and travels.</p>
+        <div class="destination-card">
+          <img src="images/swiz.avif" alt="Switzerland" />
+          <span>Swiss Alps</span>
+        </div>
+        <div class="destination-card">
+          <img src="images/india.avif" alt="India" />
+          <span>India</span>
+        </div>
+        <div class="destination-card">
+          <img src="images/UK.jpg" alt="United Kingdom" />
+          <span>United Kingdom</span>
+        </div>
+        <div class="destination-card">
+          <img src="images/edin.jpg" alt="Scotlands" />
+          <span>Edinburgh</span>
+        </div>
+        <div class="destination-card">
+          <img src="images/dubai.webp" alt="Dubai" />
+          <span>Dubai</span>
+        </div>
+        <div class="destination-card">
+          <img src="images/USA.jpg" alt="USA" />
+          <span>USA</span>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="Packages">
+      <h3 class="section-title">Our Packages</h3>
+
+      <div class="grid Packages">
+        <div class="exp-card">
+          <img src="images/beach.jpg" alt="Beach" />
+          <div class="overlay">
+            <div class="exp-info">
+              <h4>Beach Escapes</h4>
+              <span>Starting from ₹32,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <img src="images/mountain.jpg" alt="Mountain" />
+          <div class="overlay">
+            <div class="exp-info">
+              <h4>Mountain Adventures</h4>
+              <span>Starting from ₹45,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <img src="images/city.jpg" alt="City" />
+          <div class="overlay">
+            <div class="exp-info">
+              <h4>City Explorations</h4>
+              <span>Starting from ₹35,000</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery colored-bg3" id="gallery">
-      <h1 class="heading-title">Gallery</h1>
-      <div class="gallery-grid">
-        <img src="images/G-1.jpg" alt="Gallery 1" class="gallery-img" />
-        <img src="images/G-2.jpg" alt="Gallery 2" class="gallery-img" />
-        <img src="images/G-3.jpg" alt="Gallery 3" class="gallery-img" />
-        <img src="images/G-4.jpg" alt="Gallery 4" class="gallery-img" />
-        <img src="images/G-5.jpg" alt="Gallery 5" class="gallery-img" />
-        <img src="images/G-6.jpg" alt="Gallery 6" class="gallery-img" />
-      </div>
-    </section>
+    <!-- WHY US -->
+    <section class="section light" id="why">
+      <h3 class="section-title">Why TravelPace</h3>
 
-    <!-- Review Section -->
-    <section class="review colored-bg4" id="review">
-      <h1 class="heading-title">Client Reviews</h1>
-      <div class="review-list">
-        <div class="review-card">
-          <p>"Great service and amazing travel experiences!"</p>
-          <h3>- John Doe</h3>
+      <div class="grid features">
+        <div class="feature">
+          <img src="images/why-planning.jpg" alt="Planning" />
+          <h4>Thoughtful Planning</h4>
+          <p>Every trip is crafted with attention to comfort and flow.</p>
         </div>
-        <div class="review-card">
-          <p>"Highly recommend TravelPace for your next adventure."</p>
-          <h3>- Jane Smith</h3>
+        <div class="feature">
+          <img src="images/trust.webp" alt="Support" />
+          <h4>Trusted Partners</h4>
+          <p>Hotels, guides, and transport you can rely on.</p>
         </div>
-        <div class="review-card">
-          <p>"Professional and friendly staff made it perfect."</p>
-          <h3>- Mike Johnson</h3>
+        <div class="feature">
+          <img src="images/price.jpg" alt="Pricing" />
+          <h4>Transparent Pricing</h4>
+          <p>No hidden costs. No surprises.</p>
         </div>
       </div>
     </section>
 
-    <!-- Booking Section (after reviews)-->
-    <section class="book colored-bg5" id="book">
-      <h1 class="heading-title">Book Your Trip!</h1>
-      <form action="#" class="book-form">
-        <div class="flex">
-          <div class="inputBox">
-            <span>Name :</span>
-            <input type="text" placeholder="Enter your name" />
-          </div>
-          <div class="inputBox">
-            <span>Email :</span>
-            <input type="email" placeholder="Enter your email" />
-          </div>
-          <div class="inputBox">
-            <span>Phone :</span>
-            <input type="number" placeholder="Enter your number" />
-          </div>
-          <div class="inputBox">
-            <span>Address :</span>
-            <input type="text" placeholder="Enter your address" />
-          </div>
-          <div class="inputBox">
-            <span>Where to :</span>
-            <input type="text" placeholder="Place you want to visit" />
-          </div>
-          <div class="inputBox">
-            <span>How many :</span>
-            <input type="number" placeholder="Number of guests" />
-          </div>
-          <div class="inputBox">
-            <span>Arrivals :</span>
-            <input type="date" />
-          </div>
-          <div class="inputBox">
-            <span>Leaving :</span>
-            <input type="date" />
+    <!-- TRIPS -->
+    <section class="section" id="trips">
+      <h3 class="section-title">Popular Trips</h3>
+
+      <div class="trips">
+        <div
+          class="trip-card"
+          style="background-image: url(&quot;images/europe.webp&quot;)"
+        >
+          <div class="trip-overlay">
+            <h4>Romantic Europe</h4>
+            <p>7 Days · ₹89,000</p>
+            <button>View Trip</button>
           </div>
         </div>
-        <input type="submit" value="Book Now" class="btn" />
-      </form>
+
+        <div
+          class="trip-card"
+          style="background-image: url(&quot;images/escape.avif&quot;)"
+        >
+          <div class="trip-overlay">
+            <h4>Tropical Escape</h4>
+            <p>5 Days · ₹65,000</p>
+            <button>View Trip</button>
+          </div>
+        </div>
+
+        <div
+          class="trip-card"
+          style="background-image: url(&quot;images/mountain-trip.jpg&quot;)"
+        >
+          <div class="trip-overlay">
+            <h4>Mountain Serenity</h4>
+            <p>6 Days · ₹72,000</p>
+            <button>View Trip</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact Section (last)-->
-    <section class="contact colored-bg6" id="contact">
-      <h1 class="heading-title">Contact Us</h1>
-      <form action="#" class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <input type="submit" value="Send Message" class="btn" />
-      </form>
+    <!-- BOOK SECTION -->
+    <section id="book" class="section">
+      <div class="book-container">
+        <h2 class="section-title">Book Your Dream Trip</h2>
+        <form id="bookForm" class="book-form">
+          <div class="book-grid">
+            <div class="book-group">
+              <div class="book-field">
+                <input
+                  type="text"
+                  id="bookName"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+              <div class="book-field">
+                <input
+                  type="email"
+                  id="bookEmail"
+                  placeholder="Email Address"
+                  required
+                />
+              </div>
+              <div class="book-field">
+                <input
+                  type="tel"
+                  id="bookPhone"
+                  placeholder="Phone Number"
+                  required
+                />
+              </div>
+            </div>
+            <div class="book-group">
+              <div class="book-field">
+                <input
+                  type="text"
+                  id="bookAddress"
+                  placeholder="Address"
+                  required
+                />
+              </div>
+              <div class="book-field">
+                <select id="bookDestination" required>
+                  <option value="">Where to go?</option>
+                  <option value="paris">Bali, Indonesia</option>
+                  <option value="tokyo">Alps, Switzerland</option>
+                  <option value="newyork">Rajkot, India</option>
+                  <option value="london">London, UK</option>
+                  <option value="dubai">Edinburgh, Scotlands</option>
+                  <option value="bali">Dubai, UAE</option>
+                  <option value="swiss">New York, USA</option>
+                </select>
+              </div>
+              <div class="book-field">
+                <input
+                  type="number"
+                  id="bookGuests"
+                  placeholder="No. of Guests"
+                  min="1"
+                  max="20"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="date-group">
+            <div class="book-field">
+              <input type="date" id="bookArrival" required />
+            </div>
+            <div class="book-field">
+              <input type="date" id="bookLeaving" required />
+            </div>
+          </div>
+          <button type="submit" class="book-btn">
+            <span class="btn-text">Book Now</span>
+            <span class="book-spinner" style="display: none"></span>
+          </button>
+          <div id="bookStatus" class="book-status"></div>
+        </form>
+      </div>
     </section>
 
-    <footer>&copy; 2025 TravelPace. All rights reserved.</footer>
+    <!-- CONTACT / PLAN YOUR TRIP -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <header class="contact-header">
+          <h2>Contact Us</h2>
+          <p>
+            Tell us a little about your travel goals and our experts will craft
+            a personalized itinerary just for you.
+          </p>
+        </header>
+
+        <form
+          class="contact-form"
+          id="contactForm"
+          aria-labelledby="contactTitle"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              aria-label="Your Name"
+              aria-required="true"
+            />
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              aria-label="Email Address"
+              aria-required="true"
+            />
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="destination"
+              placeholder="Preferred Destination"
+              aria-label="Preferred Destination"
+            />
+          </div>
+
+          <button type="submit" class="contact-btn" aria-busy="false">
+            <span class="btn-text">SEND MESSAGE</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+
+          <p
+            class="form-status"
+            id="formStatus"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2025 TravelPace. Crafted for explorers.</p>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
